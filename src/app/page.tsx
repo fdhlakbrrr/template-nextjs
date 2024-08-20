@@ -8,12 +8,12 @@ export default function Home() {
     <Container
       direction="COL"
       align="CENTER"
-      customClass="w-full h-full gap-5 xl:gap-20"
+      customClass="w-full h-full gap-5 xl:gap-10"
     >
       <Image
         src={wojakImage}
         alt="banner"
-        className="drop-shadow-2xl h-[200px] w-[150px] md:h-[100px] xl:h-[500px] xl:w-[450px]"
+        className="drop-shadow-2xl h-[200px] w-[150px] md:h-[150px] xl:h-[300px] xl:w-[250px]"
       />
 
       <Container>
