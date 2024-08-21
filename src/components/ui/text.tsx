@@ -1,6 +1,6 @@
 import { Fragment, memo } from "react";
 import { Pacifico, Roboto } from "next/font/google";
-import type { TextCase, TextVariant } from "@/types";
+import type { TextAlign, TextCase, TextVariant } from "@/types";
 import type { ReactNode } from "react";
 import { useText } from "@/hooks/ui";
 
@@ -11,6 +11,7 @@ interface Props {
   variant?: TextVariant;
   subText?: boolean;
   textCase?: TextCase;
+  textAlign?: TextAlign;
   customClass?: string;
   children: ReactNode;
 }
@@ -19,16 +20,19 @@ export const Text = memo(function Text({
   variant = "BODY",
   subText = false,
   textCase = "NORMAL_CASE",
+  textAlign = "LEFT",
   customClass = "",
   children,
 }: Props) {
-  const { getTextCaseClassName } = useText();
+  const { getTextCaseClassName, getTextAlignClassName } = useText();
 
   if (variant === "BODY") {
     return (
       <Fragment>
         <p
-          className={`text-base ${getTextCaseClassName(textCase)} ${
+          className={`text-base ${getTextCaseClassName(
+            textCase
+          )} ${getTextAlignClassName(textAlign)} ${
             subText ? "opacity-55 " : " "
           } ${roboto.className} ${customClass}`}
         >
@@ -42,9 +46,9 @@ export const Text = memo(function Text({
     return (
       <Fragment>
         <h1
-          className={`text-4xl ${getTextCaseClassName(textCase)} ${
-            subText ? "opacity-55" : ""
-          } ${customClass}`}
+          className={`text-4xl ${getTextCaseClassName(
+            textCase
+          )} ${getTextAlignClassName(textAlign)} ${customClass}`}
         >
           {children}
         </h1>
@@ -56,9 +60,9 @@ export const Text = memo(function Text({
     return (
       <Fragment>
         <h1
-          className={`text-2xl ${getTextCaseClassName(textCase)} ${
-            subText ? "opacity-55" : ""
-          } ${customClass}`}
+          className={`text-xl opacity-55 ${getTextCaseClassName(
+            textCase
+          )} ${getTextAlignClassName(textAlign)} ${customClass}`}
         >
           {children}
         </h1>
@@ -70,7 +74,9 @@ export const Text = memo(function Text({
     return (
       <Fragment>
         <h1
-          className={`text-2xl ${getTextCaseClassName(textCase)} ${
+          className={`text-2xl ${getTextCaseClassName(
+            textCase
+          )} ${getTextAlignClassName(textAlign)} ${
             subText ? "opacity-55 " : " "
           } ${pacifico.className} ${customClass}`}
         >

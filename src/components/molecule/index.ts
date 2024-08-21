@@ -1,1 +1,1 @@
-export * from "./headingText";
+export * from "./HeadingText";

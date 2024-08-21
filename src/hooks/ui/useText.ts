@@ -1,4 +1,4 @@
-import { TextCase } from "@/types";
+import { TextAlign, TextCase } from "@/types";
 import { useCallback } from "react";
 
 export const useText = () => {
@@ -13,7 +13,25 @@ export const useText = () => {
     }
   }, []);
 
+  const getTextAlignClassName = useCallback((textAlign: TextAlign): string => {
+    switch (textAlign) {
+      case "LEFT":
+        return "text-left";
+      case "CENTER":
+        return "text-center";
+      case "RIGHT":
+        return "text-right";
+      case "START":
+        return "text-start";
+      case "END":
+        return "text-end";
+      case "JUSTIFY":
+        return "text-justify";
+    }
+  }, []);
+
   return {
     getTextCaseClassName,
+    getTextAlignClassName,
   };
 };

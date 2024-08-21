@@ -8,7 +8,7 @@ export default function Home() {
     <Container
       direction="COL"
       align="CENTER"
-      customClass="w-full h-full gap-5 xl:gap-10"
+      customClass="w-full h-full gap-5 xl:gap-10 2xl:gap-20"
     >
       <Image
         src={wojakImage}
@@ -21,13 +21,10 @@ export default function Home() {
           Fadhil&apos;s next js template
         </Text>
 
-        <Text variant="SUBTITLE">Good Job And Sleep Well! 👩‍💻</Text>
+        <Text variant="TITLE">Good Job And Sleep Well! 👩‍💻</Text>
       </Container>
 
-      <Text
-        variant="SUBTITLE"
-        customClass="bg-primary p-2 box-border rounded-md"
-      >
+      <Text customClass="bg-primary p-2 box-border rounded-md">
         Edit this page at ./src/app/page.tsx
       </Text>
     </Container>
