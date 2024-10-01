@@ -11,7 +11,7 @@ interface Props {
 }
 
 export const Container = memo(function Container({
-  customClass = "w-fit",
+  customClass = "w-full",
   children,
   direction = "COL",
   justify = "START",

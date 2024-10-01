@@ -18,7 +18,7 @@ export const HeadingText = memo(function HeadingText({
   customClass = "",
 }: Props) {
   return (
-    <Container align={contentAlign} customClass={`gap-1 bg-[red] w-full ${customClass}`}>
+    <Container align={contentAlign} customClass={`gap-1 w-full ${customClass}`}>
       <Text
         textAlign={textAlign}
         variant="TITLE"

@@ -16,7 +16,7 @@ export default function Home() {
         className="drop-shadow-2xl h-[200px] w-[150px] md:h-[150px] xl:h-[300px] xl:w-[250px]"
       />
 
-      <Container>
+      <Container align="CENTER">
         <Text textCase="CAPITALIZE" variant="TITLE">
           Fadhil&apos;s next js template
         </Text>
